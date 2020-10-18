@@ -23,8 +23,6 @@ void setup() {
     }
     
     s[0] = new Shape(true, new PVector(width / 4 * 3, height / 4 * 3), new PVector(), new PVector(75, 75), verts);
-    
-    println((Object[])s[0].getVerts());
   }
   
   {
