@@ -49,6 +49,17 @@ boolean checkCollision(Shape[] csa, int cs1, int cs2) {
 
         if (dynamicMode && intersected) {
           dis.add(ptr_dist[0]);
+          
+          if (s1.dynamic) {
+            PVector[] line = new PVector[] { v2[ec], v2[(ec + 1) % v2.length] };
+            PVector normal = new PVector(-(line[1].y - line[0].y), line[1].x - line[0].x).normalize();
+            
+            stroke(50, 0, 0);
+            line(s2.pos.x, s2.pos.y, s2.pos.x + -normal.x * 50, s2.pos.y + -normal.y * 50);
+            line(v1[vc].x, v1[vc].y, s1.pos.x, s1.pos.y);
+            
+            //s1.rot.z += degrees(atan2(v1[vc].x - s1.pos.x, v1[vc].y - s1.pos.y) - atan2(normal.x, normal.y));
+          }
         }
 
         if (debugMode) {

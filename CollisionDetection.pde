@@ -5,6 +5,8 @@ float speed = 2.5;
 final boolean debugMode = false;
 final boolean dynamicMode = true;
 
+int po0, po1, po2;
+
 void setup() {
   size(1280, 720, P3D);
 
@@ -27,6 +29,8 @@ void setup() {
       { 1, 2 },
       { 0, 1, 2}
     });
+    
+    po0 = attachPhysics(s, 0);
   }
 
   {
@@ -43,6 +47,8 @@ void setup() {
       { 3, 4 },
       { 0, 1, 2, 3, 4 }
     });
+    
+    po1 = attachPhysics(s, 1);
   }
 
   {
@@ -58,6 +64,8 @@ void setup() {
       { 2, 3 },
       { 0, 1, 2, 3 }
     });
+    
+    po2 = attachPhysics(s, 2);
   }
 }
 
